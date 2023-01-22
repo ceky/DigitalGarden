@@ -1,0 +1,12 @@
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  gap: 1rem;
+}

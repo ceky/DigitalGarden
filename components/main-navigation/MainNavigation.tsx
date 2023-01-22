@@ -1,9 +1,12 @@
+import style from "./MainNavigation.module.css";
+
 export default function MainNavigation() {
   return (
-    <header>
-      <ul>
-        <li>Menu 1</li>
-        <li>Menu 2</li>
+    <header className={style.headerContainer}>
+      <div className="heading">Things I ♥</div>
+      <ul className={style.menu}>
+        <li>Dropdown menu here</li>
+        <li>About</li>
       </ul>
     </header>
   );
