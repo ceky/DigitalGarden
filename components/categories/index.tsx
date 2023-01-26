@@ -4,7 +4,9 @@ import { useState, useEffect, useCallback } from "react";
 import { NextPage } from "next";
 import { Select } from "antd";
 
-import supabase from "../../utils/supabase";
+import supabase from "@/utils/supabase";
+import { categoryAtom } from "@/context/state";
+import { useAtom } from "jotai";
 
 interface Category {
   value: string;
@@ -13,6 +15,7 @@ interface Category {
 
 const Categories: NextPage = () => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [selectedCategory, setSelectedCategory] = useAtom(categoryAtom);
 
   const getCategories = useCallback(async () => {
     let { data } = await supabase.from("categories").select("name");
@@ -22,14 +25,15 @@ const Categories: NextPage = () => {
       label: category.name,
     }));
     setCategories(loadedCategories);
-  }, []);
+    setSelectedCategory(loadedCategories[0].label);
+  }, [setSelectedCategory]);
 
   useEffect(() => {
     getCategories();
   }, [getCategories]);
 
   const handleChange = (category: string) => {
-    console.info(category);
+    setSelectedCategory(category);
   };
 
   if (!categories.length) return null;
