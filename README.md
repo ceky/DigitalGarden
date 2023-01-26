@@ -9,6 +9,3 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 ```
-
-TODO
-add redux to store the selected category
