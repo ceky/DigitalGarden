@@ -7,7 +7,10 @@ import Posts from "@/components/posts";
 export default function Home() {
   return (
     <>
-      <h1 className={styles.header}>Home page</h1>
+      <h1 className={styles.header}>
+        A collection of things that I enjoyed watching, reading or listening to
+        over time
+      </h1>
       <Posts />
     </>
   );

@@ -5,6 +5,7 @@ import { useAtom } from "jotai";
 import supabase from "@/utils/supabase";
 import { categoryAtom } from "@/context/state";
 import { useCallback, useEffect, useState } from "react";
+import styles from "./index.module.css";
 
 interface Post {
   id: number;
@@ -38,11 +39,15 @@ const Posts: NextPage = () => {
 
   return (
     <div>
-      <p>{selectedCategory}</p>
+      <h2>{selectedCategory}</h2>
       {posts.length > 0 && (
-        <ul>
+        <ul className={styles.postsContainer}>
           {posts.map((post) => (
-            <li key={post.id} onClick={() => handlePostClick(post.link)}>
+            <li
+              className={styles.post}
+              key={post.id}
+              onClick={() => handlePostClick(post.link)}
+            >
               <h2>{post.title}</h2>
               <p>{post.description}</p>
             </li>

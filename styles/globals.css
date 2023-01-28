@@ -1,5 +1,18 @@
+:root {
+  --color-black: #353534;
+}
+
 body {
   font-family: 'Lato', sans-serif;
+  color: var(--color-black);
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  line-height: 1.5;
+}
+
+main {
+  max-width: 1400px;
+  margin: 1.3rem;
 }
 
 .heading {
