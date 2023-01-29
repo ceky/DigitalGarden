@@ -39,7 +39,7 @@ const Posts: NextPage = () => {
 
   return (
     <div>
-      <h2>{selectedCategory}</h2>
+      <h1 className={styles.selectedCategory}>{selectedCategory}</h1>
       {posts.length > 0 && (
         <ul className={styles.postsContainer}>
           {posts.map((post) => (
