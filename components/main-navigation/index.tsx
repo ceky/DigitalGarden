@@ -1,16 +1,21 @@
 import { NextPage } from "next";
+import Link from "next/link";
 import Categories from "../categories";
 import style from "./index.module.css";
 
 const MainNavigation: NextPage = () => {
   return (
     <nav className={style.headerContainer}>
-      <div className="heading">@thingsI♥</div>
-      <ul className={style.menu}>
+      <Link href="/" className={style.logo}>
+        @thingsI♥
+      </Link>
+      <div className={style.menu}>
         <Categories />
-        <li>About</li>
+        <Link href="/about" className={style.link}>
+          About
+        </Link>
         {/* TODO mobile menu here */}
-      </ul>
+      </div>
     </nav>
   );
 };

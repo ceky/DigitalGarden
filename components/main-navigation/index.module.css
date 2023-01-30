@@ -1,6 +1,7 @@
 .headerContainer {
   display: flex;
   justify-content: space-between;
+  text-decoration: none;
   align-items: center;
   padding: 1.3rem;
 }
@@ -10,4 +11,13 @@
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
 }
